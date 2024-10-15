@@ -6,9 +6,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func OrderRoutes(incommingRoutes *gin.Engine) {
-	incommingRoutes.GET("/orders", controller.GetOrders())
-	incommingRoutes.GET("/orders/:order_id", controller.GetOrder())
-	incommingRoutes.POST("/orders", controller.CreateOrder())
-	incommingRoutes.PATCH("/orders:order_id", controller.UpdateOrder())
+func OrderRoutes(incomingRoutes *gin.Engine) {
+	incomingRoutes.GET("/orders", controller.GetOrders())
+	incomingRoutes.GET("/orders/:order_id", controller.GetOrder())
+	incomingRoutes.POST("/orders", controller.CreateOrder())
+	incomingRoutes.PATCH("/orders/:order_id", controller.UpdateOrder())
 }

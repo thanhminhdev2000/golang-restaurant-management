@@ -6,9 +6,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func InvoiceRoutes(incommingRoutes *gin.Engine) {
-	incommingRoutes.GET("/invoices", controller.GetInvoices())
-	incommingRoutes.GET("/invoices/:invoice_id", controller.GetInvoice())
-	incommingRoutes.POST("/invoices", controller.CreateInvoice())
-	incommingRoutes.PATCH("/invoices:invoice_id", controller.UpdateInvoice())
+func InvoiceRoutes(incomingRoutes *gin.Engine) {
+	incomingRoutes.GET("/invoices", controller.GetInvoices())
+	incomingRoutes.GET("/invoices/:invoice_id", controller.GetInvoice())
+	incomingRoutes.POST("/invoices", controller.CreateInvoice())
+	incomingRoutes.PATCH("/invoices/:invoice_id", controller.UpdateInvoice())
 }

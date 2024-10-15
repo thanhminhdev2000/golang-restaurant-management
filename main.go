@@ -1,12 +1,15 @@
 package main
 
 import (
-	"golang-restaurant-management/database"
-	"golang-restaurant-management/middleware"
-	"golang-restaurant-management/routes"
 	"os"
 
+	"golang-restaurant-management/database"
+
+	middleware "golang-restaurant-management/middleware"
+	routes "golang-restaurant-management/routes"
+
 	"github.com/gin-gonic/gin"
+
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -16,7 +19,7 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		port = "8080"
+		port = "8000"
 	}
 
 	router := gin.New()
@@ -32,5 +35,4 @@ func main() {
 	routes.InvoiceRoutes(router)
 
 	router.Run(":" + port)
-
 }
